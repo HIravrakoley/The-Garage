@@ -1,0 +1,43 @@
+
+  cloud:
+    gateway:
+          routes:
+            # Garage Service
+            - id: garage-service
+              uri: lb://garage-service
+              predicates:
+                - Path=/garage/**
+              filters:
+                - JwtFilter
+
+            # Vehicle Service
+            - id: vehicle-service
+              uri: lb://VEHICLE-SERVICE
+              predicates:
+                - Path=/vehicle/**
+              filters:
+                - JwtFilter
+
+            # Appointment Service
+            - id: appointment-service
+              uri: http://localhost:8084
+              predicates:
+                - Path=/appointment/**
+              filters:
+                - AuthenticationFilter
+
+            # Billing Service
+            - id: billing-service
+              uri: http://localhost:8085
+              predicates:
+                - Path=/billing/**
+              filters:
+                - AuthenticationFilter
+
+            # Notification Service
+            - id: notification-service
+              uri: http://localhost:8086
+              predicates:
+                - Path=/notification/**
+              filters:
+                - AuthenticationFilter

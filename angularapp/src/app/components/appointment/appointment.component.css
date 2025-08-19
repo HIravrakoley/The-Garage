@@ -1,0 +1,303 @@
+/* 🔹 Overall Container */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap');
+
+.appointment-container {
+  font-family: 'Poppins', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+}
+.appointment-heading {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+/* 🔹 Bold & Modern Font for the Main Title */
+.appointment-heading h2 {
+  font-size: 36px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Clean & Professional Font for Description */
+.appointment-heading p {
+  font-size: 17px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* 🔹 Section Styling */
+.section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.section-content.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 🔹 Image Styling */
+.appointment-image {
+  position: relative;
+  flex: 1;
+}
+.appointment-card {
+  background-color:  #0e2238; /* Dark background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+  border: 1px solid #333; /* Subtle border */
+}
+
+.appointment-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appointment-form label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: left;
+}
+
+.appointment-form input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000;
+  background-color: #f5f5f5;
+  transition: 0.3s ease-in-out;
+}
+
+.appointment-form input:focus {
+  border-color: #fff;
+  outline: none;
+  background-color: #e0e0e0;
+}
+
+.submit-button {
+  background-color: #fff;
+  width: 40%;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.submit-button:disabled {
+  background-color: #444;
+  color: #aaa;
+  border: 1px solid #666;
+  cursor: not-allowed;
+}
+
+
+.appointment-image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+
+.left img {
+  margin-right: 20px;
+}
+
+.right img {
+  margin-left: 20px;
+}
+
+/* 🔹 Text Content */
+.text-content {
+  flex: 1.2;
+  color: #ffffff;
+  padding: 20px;
+}
+
+
+.instructions {
+  margin-left: 200px ;
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+}
+.instructions-appointment{
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* 🔹 Vehicles Section */
+.vehicles-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.vehicle-card {
+  background-color: #0e2238;
+  width: 260px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔹 Buttons */
+.select-button, .submit-button {
+  margin-left: 10px;
+  background: #43a4c2;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.select-button:hover, .submit-button:hover {
+
+  background: #e03e00;
+}
+
+@media (max-width: 900px) {
+  .section-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .appointment-image img {
+      max-width: 300px;
+      margin-bottom: 20px;
+  }
+
+  .vehicles-container {
+      flex-direction: column;
+  }
+}
+
+label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+input[type="number"]::placeholder {
+  color: #aaa;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* 🔹 Odometer Section */
+.odometer-wrapper {
+  max-width: 500px;
+  margin-left: 49%;
+  padding: 40px;
+  background-color: #0e2238;
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.form-group input[type="number"] {
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input[type="number"]:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.book-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.odometer-instructions{
+  margin-left: 63% ;
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+
+}
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Eureka" />
+        <module name="Rating-service" />
+      </profile>
+      <profile name="Annotation profile for Garage-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="Authentication-Service" />
+        <module name="Billing-Service" />
+        <module name="Api-Gateway-N" />
+        <module name="Garage-Service" />
+        <module name="Appointment-Service" />
+        <module name="Notification-Service" />
+        <module name="Vehicle-Service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="API-Gateway" target="17" />
+      <module name="Api-Gateway-2" target="17" />
+      <module name="ApiGateway-New" target="17" />
+      <module name="Project_Security" target="17" />
+      <module name="springapp" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="API-Gateway" options="-parameters" />
+      <module name="Api-Gateway-2" options="-parameters" />
+      <module name="Api-Gateway-N" options="-parameters" />
+      <module name="ApiGateway-New" options="-parameters" />
+      <module name="Appointment-Service" options="-parameters" />
+      <module name="Authentication-Service" options="-parameters" />
+      <module name="Billing-Service" options="-parameters" />
+      <module name="Eureka" options="-parameters" />
+      <module name="Garage-Service" options="-parameters" />
+      <module name="Notification-Service" options="-parameters" />
+      <module name="Project_Security" options="-parameters" />
+      <module name="Rating-service" options="-parameters" />
+      <module name="Vehicle-Service" options="-parameters" />
+      <module name="springapp" options="-parameters" />
+    </option>
+  </component>
+</project>

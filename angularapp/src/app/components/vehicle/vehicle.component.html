@@ -1,0 +1,100 @@
+<app-navbar></app-navbar>
+<h1 class="heading">Manage Your Fleet Seamlessly</h1>
+<div class="vehicle-main-container">
+  
+  <!-- 🔽 Left Side Content -->
+  <div class="left-content">
+    
+    <!-- 💡 Introduction -->
+    <div class="intro-section">
+      
+      <p class="description">
+        Whether you’re an individual car owner or managing multiple vehicles, our intuitive platform
+        makes it effortless to add, update, and maintain your vehicle records with just a few clicks.
+      </p>
+    </div>
+
+    <!-- 🚗 Form Section -->
+    <h2>{{ selectedVehicle ? 'Edit Vehicle Details' : 'Register a New Vehicle' }}</h2>
+
+    <form [formGroup]="vehicleForm" (ngSubmit)="submitForm()" class="vehicle-form">
+      <div class="form-group">
+        <label for="registration">Registration Number:</label>
+        <input 
+          id="registration" 
+          type="text" 
+          formControlName="registration" 
+          placeholder="e.g. MH12AB1234"
+          required />
+      </div>
+
+      <div class="form-group">
+        <label for="companyName">Company Name:</label>
+        <input 
+          id="companyName" 
+          type="text" 
+          formControlName="companyName" 
+          placeholder="e.g. Tesla, Ford, BMW"
+          required />
+      </div>
+
+      <div class="form-group">
+        <label for="modelName">Model Name:</label>
+        <input 
+          id="modelName" 
+          type="text" 
+          formControlName="modelName" 
+          placeholder="e.g. Model S, Fiesta, 3 Series"
+          required />
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" [disabled]="vehicleForm.invalid">
+          {{ selectedVehicle ? 'Update Vehicle' : 'Add Vehicle' }}
+        </button>
+        <button type="button" (click)="clearForm()" *ngIf="selectedVehicle" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+
+    <!-- ✅ Vehicle List -->
+    <div *ngIf="isLoading" class="loading">Loading your vehicles...</div>
+
+    <div *ngIf="!isLoading && vehicles.length > 0" class="vehicle-list">
+      <h3>Your Registered Vehicles</h3>
+      <p class="description">Keep track of your personal and commercial vehicles in one place.</p>
+
+      <div *ngFor="let vehicle of vehicles" class="vehicle-card">
+        <div class="vehicle-details">
+          <p><strong>Registration:</strong> {{ vehicle.registration }}</p>
+          <p><strong>Company:</strong> {{ vehicle.companyName }}</p>
+          <p><strong>Model:</strong> {{ vehicle.modelName }}</p>
+        </div>
+
+        <div class="vehicle-actions">
+          <button (click)="editVehicle(vehicle)" class="edit-btn">Edit</button>
+          <button (click)="deleteVehicle(vehicle.id!)" class="delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isLoading && vehicles.length === 0" class="no-vehicles">
+      <p>You haven't added any vehicles yet. Use the form above to register your first ride.</p>
+    </div>
+
+    <!-- ⚠️ Error -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+  </div>
+
+  <!-- 🔽 Right Side Video -->
+  <div class="right-content">
+    <video autoplay muted loop playsinline class="vehicle-video">
+      <source src="bike.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,87 @@
+/* Navigation Bar Styling */
+.navbar {
+    background: #1c1c1c; /* Matte black */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+    padding: 5px 0;  /* Smaller height */
+  }
+  
+  /* Hover Effect: Stronger Shadow */
+  .navbar:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Container Layout */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5px 15px; /* Reduced padding */
+  }
+  
+  /* Logo Styling */
+  .logo {
+    font-size: 18px; /* Smaller font */
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff; /* White logo text */
+    transition: color 0.3s;
+  }
+  
+  .logo:hover {
+    color: #007bff; /* Highlight color */
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Reduced spacing between links */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #cccccc; /* Light gray text */
+    font-size: 14px; /* Smaller font size */
+    transition: color 0.3s, transform 0.3s;
+    padding: 5px 10px; /* Smaller links */
+    border-radius: 4px;
+  }
+  
+  /* Hover & Active Effects */
+  .nav-links a:hover {
+    color: #007bff; /* Blue on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+    background: rgba(0, 123, 255, 0.1);
+  }
+  
+  .nav-links a.active {
+    color: #007bff;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff; /* Thinner border */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  

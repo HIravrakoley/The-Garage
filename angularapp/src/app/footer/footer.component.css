@@ -1,0 +1,86 @@
+/* Ensure Footer Stays at the Bottom */
+.footer {
+    width: 100%;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+  }
+  
+  /* Big Animated "The Garage" */
+  .footer-title {
+    font-size: 3rem; /* Large size */
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInScroll 1.5s ease-in-out forwards;
+  }
+  
+  /* Fade-in Scroll Animation */
+  @keyframes fadeInScroll {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Small text styling */
+  .footer-text {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-links a:hover {
+    color: #fff;
+  }
+  
+  .footer-links span {
+    color: #666;
+  }
+  
+  /* Social icons styling */
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons a img {
+    width: 22px;
+    height: 22px;
+    margin: 0 5px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icons a img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Copyright text */
+  .footer-copy {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 15px;
+  }
+  
+  

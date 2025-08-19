@@ -1,0 +1,123 @@
+.vehicle-main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  gap: 2rem;
+}
+.heading{
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-left: 30px;
+  margin-bottom: 0.5rem;
+  color: #030303;
+}
+
+.left-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.right-content {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-video {
+  width: 100%;
+  max-height: 90vh;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.video-overlay-text {
+  position: absolute;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #050505;
+}
+
+/* Add/Update Form Styling */
+.vehicle-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.vehicle-form input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #121212;
+  color: white;
+}
+
+/* Buttons */
+.btn-group {
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #3fa7b4;
+  color: black;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #00c0cc;
+}
+
+.cancel-btn {
+  background-color: #555;
+  margin-left: 1rem;
+}
+
+.vehicle-list {
+  margin-top: 2rem;
+}
+
+.vehicle-card {
+  background-color:#0e2238;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vehicle-actions button {
+  margin-left: 0.5rem;
+}
+.vehicle-details{
+  color: #ffffff
+
+}
+
+
+

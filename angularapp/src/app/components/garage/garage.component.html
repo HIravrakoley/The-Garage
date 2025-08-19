@@ -1,0 +1,108 @@
+<app-navbar></app-navbar> 
+
+<div class="garage-container">
+  <h2 class="title">Why Choose Our Partnered Garages?</h2>
+  <div class="right-content">
+  <div class="video-card" *ngFor="let video of videos">
+    <video
+      muted
+      loop
+      playsinline
+      class="video"
+      (mouseenter)="videoRef.play()"
+      (mouseleave)="videoRef.pause()"
+      #videoRef
+    >
+      <source [src]="video.src" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h2>{{ video.title }}</h2>
+      <p>{{ video.description }}</p>
+    </div>
+  </div>
+  </div>
+
+  <!-- Page Header -->
+  <h1 class="title">Select a Garage</h1>
+  <p class="description">
+    Find the best garages in your area for quality repairs, maintenance, and services.**  
+    Click on a garage to view details and book an appointment effortlessly.
+  </p>
+
+
+  <!-- Loading and Error Messages -->
+  <div *ngIf="loading" class="loading">Loading garages...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <!-- Garage List -->
+  <div *ngIf="garages.length > 0" class="garage-list">
+    <div *ngFor="let garage of garages" class="garage-card" (click)="fetchGarageById(garage.id)">
+      <h2>{{ garage.name }}</h2>
+      <p><strong>Location:</strong> {{ garage.location }}</p>
+      <p><strong>Contact:</strong> {{ garage.contactNumber }}</p>
+      <p><strong>Services Offered:</strong> General Repair, Oil Change, Tire Replacement</p>
+      
+    </div>
+  </div>
+  
+
+  <!-- No Garages Available -->
+  <div *ngIf="garages.length === 0 && !loading" class="no-garages">
+    No garages available at the moment. Please check back later.
+  </div>
+
+  <p class="description">
+    Powering Excellence with Our Elite Partners
+  </p>
+
+  <div class="logo-scroller">
+    <div class="logo-track">
+      <img src="ford_logo.png" alt="ford">
+      <img src="harleydavidson_logo.png" alt="Ford">
+      <img src="audi_logo.png" alt="audi">
+      <img src="honda_logo.png" alt="honda">
+      <img src="hyundai_logo.png" alt="Mercedes">
+      <img src="bmw_logo.png" alt="Ford">
+      <img src="nissan_logo.png" alt="Audi">
+      <img src="kawasaki_logo.png" alt="Ford">
+      <img src="Volkswagen_logo.png" alt="Mercedes">
+      <img src="mercedesBenz_logo.png" alt="Ford">
+      <img src="suzuki_logo.png" alt="Ford">
+      <img src="KTM_logo.png" alt="Ford">
+      <img src="tata_logo.png" alt="Ford">
+      <img src="royalenfield_logo.png" alt="Mercedes">
+      <!-- Duplicate logos for seamless looping -->
+
+      <img src="ford_logo.png" alt="ford">
+      <img src="harleydavidson_logo.png" alt="Ford">
+      <img src="audi_logo.png" alt="audi">
+      <img src="honda_logo.png" alt="honda">
+      <img src="hyundai_logo.png" alt="Mercedes">
+      <img src="bmw_logo.png" alt="Ford">
+      <img src="nissan_logo.png" alt="Audi">
+      <img src="kawasaki_logo.png" alt="Ford">
+      <img src="Volkswagen_logo.png" alt="Mercedes">
+      <img src="mercedesBenz_logo.png" alt="Ford">
+      <img src="suzuki_logo.png" alt="Ford">
+      <img src="KTM_logo.png" alt="Ford">
+      <img src="tata_logo.png" alt="Ford">
+      <img src="royalenfield_logo.png" alt="Mercedes">
+     
+    </div>
+  </div>
+  
+
+  <!-- Customer Testimonials -->
+  <div class="testimonials-section">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <p>⭐️⭐️⭐️⭐️⭐️ "Excellent service! The garage I visited was professional, and my car was fixed in no time." – **John D.**</p>
+    </div>
+    <div class="testimonial">
+      <p>⭐️⭐️⭐️⭐️⭐️ "Great experience! Booking was easy, and the service was top-notch." – **Emily R.**</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+  

@@ -1,0 +1,325 @@
+:root {
+  --primary-bg: #0d0d0d;
+  --secondary-bg: #1a1a1a;
+  --text-color: #ffffff;
+  --secondary-text: #b0b0b0;
+  --highlight: #ffffff;
+  --border-radius: 8px;
+  --border-color: rgba(0, 0, 0, 0.8); /* Black thin border */
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container */
+.garage-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 5%;
+  min-height: 100vh;
+  border: 1px solid var(--border-color); /* Thin black border */
+ 
+}
+
+/* Header */
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: var(--highlight);
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--border-color); /* Thin black border */
+  padding-bottom: 5px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+  max-width: 600px;
+}
+
+/* Loading and Error Messages */
+.loading {
+  font-size: 1.2rem;
+  color: var(--highlight);
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 1.2rem;
+}
+
+/* Garage List */
+/* ========== Garage List Grid ========== */
+.garage-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 50px 20px;
+  justify-content: center;
+}
+
+/* ========== Garage Card Style ========== */
+.garage-card {
+  position: relative;
+  background: #0e0e0e;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  padding: 30px 25px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.35s ease, border 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Neon border on hover */
+.garage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(135deg, #ffffff10, #ffffff04);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.garage-card:hover::before {
+  opacity: 1;
+}
+
+.garage-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Text Styling */
+.garage-card h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.garage-card p {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.garage-card p strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Optional: subtle glowing dot */
+.garage-card::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  background: #00ffee;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ffeeaa;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.garage-card:hover::after {
+  opacity: 1;
+}
+
+/* No Garages Available */
+.no-garages {
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Additional Info Sections */
+.info-section, .faq-section, .testimonials-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color); /* Thin black border */
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+/* Headings */
+.info-section h2, 
+.faq-section h2, 
+.testimonials-section h2 {
+  font-size: 2rem;
+  color: var(--highlight);
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-color); /* Thin black border */
+  padding-bottom: 5px;
+}
+
+/* Testimonials */
+.testimonial {
+  padding: 15px;
+  border-left: 3px solid var(--highlight);
+  margin-bottom: 15px;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--secondary-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .garage-card {
+    padding: 15px;
+  }
+
+  .info-section h2, 
+  .faq-section h2, 
+  .testimonials-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-section li {
+    font-size: 1rem;
+  }
+}
+
+/* 3 videos*/
+
+.right-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem;
+  background-color: #fff; /* White background */
+  flex-wrap: wrap; /* Optional: allows wrapping on smaller screens */
+}
+
+.video-card {
+  position: relative;
+  width: 320px;         
+  aspect-ratio: 9 / 16;  
+  overflow: hidden;
+  border-radius: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  transition: filter 0.3s ease;
+  border-radius: 24px;
+}
+
+.video-card:hover .video {
+  filter: brightness(100%);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.overlay h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.overlay p {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+
+/* logos */
+
+.logo-scroller {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 99.3vw; /* Full viewport width */
+  overflow: hidden;
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(200px * 10); /* Adjust based on logo count */
+  animation: scroll-left 30s linear infinite;
+}
+
+.logo-track img {
+  width: 300px;
+  height: 70px;
+  padding: 0 30px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.logo-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

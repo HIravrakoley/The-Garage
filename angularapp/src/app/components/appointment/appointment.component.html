@@ -1,0 +1,102 @@
+<app-navbar></app-navbar>
+
+<div class="appointment-container">
+   
+    
+    <!-- ✅ Page Heading -->
+    <div class="appointment-heading">
+      <h2>Book Your Appointment at {{ garageName }} </h2>
+      <p>Follow the steps below to book an appointment. Ensure all details are correct before confirming.</p>
+    </div>
+
+    <!-- Display any other error messages -->
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <!-- ✅ Vehicle Selection Section -->
+    <section class="vehicle-selection">
+      <div class="section-content">
+        
+        <!-- Image on Left -->
+        <div class="appointment-image left">
+          <img src="bike2.jpg" alt="Select Your Vehicle">
+        </div>
+
+        <div class="text-content">
+          <p class="instructions">Select Your Vehicle</p>
+          <div class="vehicles-container">
+            <div *ngFor="let vehicle of vehicles" class="vehicle-card">
+              <div class="vehicle-details">
+                <p><strong>Registration:</strong> {{ vehicle.registration }}</p>
+                <p><strong>Company:</strong> {{ vehicle.companyName }}</p>
+                <p><strong>Model:</strong> {{ vehicle.modelName }}</p>
+              </div>
+
+              <button 
+                (click)="selectVehicle(vehicle.id)" 
+                [disabled]="vehicleId === vehicle.id" 
+                class="select-button">
+                {{ vehicleId === vehicle.id ? 'Selected' : 'Select Vehicle' }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ Odometer Input Section (after vehicle selection) -->
+    <h2 class="odometer-instructions">Enter the odometer Value</h2>
+    <div class="odometer-wrapper">
+      <div class="form-group">
+        <label for="odometer">Odometer (km):</label>
+        <input
+          type="number"
+          id="odometer"
+          [(ngModel)]="odometer"
+          name="odometer"
+          min="0"
+          required
+          placeholder="Enter current reading"
+        />
+      </div>
+    </div>
+
+    <!-- ✅ Appointment Booking Section -->
+    <section class="appointment-booking">
+      <div class="section-content reverse">
+
+        <!-- Text Content -->
+        <div class="text-content">
+          <div class="appointment-card">
+            <form [formGroup]="appointmentForm" class="appointment-form">
+              <p class="instructions-appointment">Choose Your Appointment Time</p>
+              <label for="date">Select Date:</label>
+              <input type="date" id="date" formControlName="date" required>
+              <label for="time">Select Time:</label>
+              <input type="time" id="time" formControlName="time" required>
+            </form>
+          </div>
+
+          <!-- ✅ Separate Submit Button -->
+          <div class="book-button-wrapper">
+            <button 
+              (click)="onSubmit()" 
+              [disabled]="appointmentForm.invalid || !vehicleId || !odometer" 
+              class="submit-button">
+              Book Appointment
+            </button>
+          </div>
+        </div>
+
+        <!-- Image on Right -->
+        <div class="appointment-image right">
+          <img src="booking.jpg" alt="Appointment Time">
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+<app-footer></app-footer>

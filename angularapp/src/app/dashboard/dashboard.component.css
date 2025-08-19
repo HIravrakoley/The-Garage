@@ -1,0 +1,225 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --main-bg: #ffffff;
+  --text-dark: #000000;
+  --text-light: #555;
+  --accent: #111;
+  --border-color: #000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--main-bg);
+  color: var(--text-dark);
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(80%);
+  transition: transform 1.5s ease;
+}
+
+.home-container:hover .car-image {
+  transform: scale(1.05);
+}
+.overlay-text{
+  font-family: 'Playfair Display', serif; 
+  font-style: italic;
+  font-size: 2.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  padding: 30px 40px;
+  border-radius: 20px;
+
+}
+.subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-dark);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.24);
+  padding: 30px 40px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+}
+
+
+
+.features {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.features p {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-weight: 300;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  padding: 30px 20px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background-color: #f0f0f0;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.car-video {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.video-text {
+  color: var(--text-dark);
+}
+
+.testimonials {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  width: 300px;
+  padding: 30px;
+  background-color: #fafafa;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.testimonial-card:hover {
+  background-color: #f0f0f0;
+}
+
+.quote-text {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.client-position {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.logo-scroller {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 99.3vw; /* Full viewport width */
+  overflow: hidden;
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(200px * 10); /* Adjust based on logo count */
+  animation: scroll-left 30s linear infinite;
+}
+
+.logo-track img {
+  width: 300px;
+  height: 60px;
+  padding: 0 30px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.logo-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

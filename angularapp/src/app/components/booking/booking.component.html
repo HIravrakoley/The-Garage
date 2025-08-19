@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="booking-container">
+  <div class="header">
+    <h2>My Bookings</h2>
+    <div class="header-decoration"></div>
+  </div>
+  
+  <div class="bookings-grid">
+    <div class="booking-card" *ngFor="let appointment of appointments">
+      <div class="card-header">
+        <div class="garage-name">{{ appointment.garageName }}</div>
+        <div class="appointment-time">{{ appointment.appointmentTime | date:'dd MMM yyyy, h:mm a' }}</div>
+      </div>
+      <div class="card-body">
+        <div class="vehicle-info">
+          <div class="info-label">Vehicle</div>
+          <div class="info-value">{{ appointment.vehicleName }}</div>
+        </div>
+        <div class="odometer-info">
+          <div class="info-label">Odometer</div>
+          <div class="info-value">{{ appointment.odometer }} km</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="empty-state" *ngIf="appointments.length === 0">
+    <div class="empty-icon">📅</div>
+    <div class="empty-message">No bookings found</div>
+    <div class="empty-submessage">Your future appointments will appear here</div>
+  </div>
+</div>
+
+  
